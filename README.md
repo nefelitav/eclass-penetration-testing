@@ -14,8 +14,6 @@ docker-compose down -v
 
 The website is available in http://localhost:8001/.
 
-### Report
-
 #### Defence
 - <ins>CSRF</ins>: We protected the website against CSRF attacks by adding a randomly generated token to every sensitive form as a hidden input. The same token is stored on the Session. When submitting the form, the two tokens are compared, thus preventing an attacker from creating a CSRF attack URL, since they cannot fill in this hidden input with the authorised user's token, inducing them to perform an action they did not mean to.
 - <ins>XSS</ins>: Similarly, we performed URL encoding on any user input that may appear on the website. For this we employed the built-in PHP function "htmlspecialchars" and used it wherever POST, GET and REQUEST variables were used, as well as $_SERVER[PHP_SELF].
