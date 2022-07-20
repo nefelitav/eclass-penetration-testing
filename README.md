@@ -12,7 +12,7 @@ docker-compose start
 docker-compose down -v
 ```
 
-The website is available in http://localhost:8001/.
+Go to http://localhost:8001/.
 
 #### Defence
 - <ins>CSRF</ins>: We protected the website against CSRF attacks by adding a randomly generated token to every sensitive form as a hidden input. The same token is stored on the Session. When submitting the form, the two tokens are compared, thus preventing an attacker from creating a CSRF attack URL, since they cannot fill in this hidden input with the authorised user's token, inducing them to perform an action they did not mean to.
